@@ -553,7 +553,7 @@ class Adminer {
 		echo "<fieldset><legend>" . lang('Limit') . "</legend><div>"; // <div> for easy styling
 		// data-default - the same value as in selectLimitProcess()
 		// 0 is printed as an empty value, both mean no limit
-		echo "<input type='number' name='limit' class='size' value='" . h($limit ?: "") . "' data-default='50'" . on('input', 'selectFieldChange') . ">";
+		echo "<input type='number' name='limit' class='size' value='" . h($limit ?: "") . "' data-default='20'" . on('input', 'selectFieldChange') . ">";
 		echo "</div></fieldset>\n";
 	}
 
@@ -706,14 +706,14 @@ class Adminer {
 
 	/** Process limit box in select */
 	function selectLimitProcess(): int {
-		return (isset($_GET["limit"]) ? intval($_GET["limit"]) : 50);
+		return (isset($_GET["limit"]) ? intval($_GET["limit"]) : 20);
 	}
 
 	/** Process length box in select
 	* @return numeric-string number of characters to shorten texts, will be escaped, empty string means unlimited
 	*/
 	function selectLengthProcess(): string {
-		return (isset($_GET["text_length"]) ? "$_GET[text_length]" : "100");
+		return (isset($_GET["text_length"]) ? "$_GET[text_length]" : "25");
 	}
 
 	/** Process extras in select form

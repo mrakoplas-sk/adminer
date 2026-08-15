@@ -220,9 +220,16 @@ function page_messages(string $error): void {
 * @param ''|'auth'|'db'|'ns' $missing
 */
 function page_footer(string $missing = ""): void {
-	echo "</div>\n\n<div id='foot' class='foot'>\n<div id='menu'>\n";
-	adminer()->navigation($missing);
-	echo "</div>\n";
+echo "</div>\n\n<div id='foot' class='foot'>\n<div id='menu'>\n";
+
+$current_path = $_SERVER['REQUEST_URI'];
+$path = parse_url($current_path, PHP_URL_PATH);
+$up_one_level = rtrim(dirname($path), '/\\') . '/';
+
+echo '<a class="nav-link active" aria-current="page" href="' . h($up_one_level) . '">Domov</a>';
+
+adminer()->navigation($missing);
+echo "</div>\n";
 	if ($missing != "auth") {
 		?>
 <form action="" method="post">
