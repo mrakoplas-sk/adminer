@@ -1,0 +1,360 @@
+<?php
+namespace Adminer;
+
+Lang::$translations = array(
+	'System' => 'Систем', // label for database system selection (MySQL, SQLite, ...)
+	'Server' => 'Сервер',
+	'Username' => 'Корисничко име',
+	'Password' => 'Лозинка',
+	'Permanent login' => 'Трајна пријава',
+	'Login' => 'Пријава',
+	'Logout' => 'Одјава',
+	'Logged in as: %s' => 'Пријави се као: %s',
+	'Logout successful.' => 'Успешна одјава.',
+	'Invalid credentials.' => 'Неважеће дозволе.',
+	'Language' => 'Језик',
+	'Invalid CSRF token. Submit the form again.' => 'Неважећи CSRF код. Проследите поново форму.',
+	'No extension' => 'Без додатака',
+	'None of the supported PHP extensions (%s) are available.' => 'Ниједан од подржаних PHP додатака (%s) није доступан.',
+	'Session support must be enabled.' => 'Морате омогућити подршку за сесије.',
+	'Session expired. Please log in again.' => 'Ваша сесија је истекла, пријавите се поново.',
+	'%s version: %s through PHP extension %s' => '%s верзија: %s помоћу PHP додатка је %s',
+	'Refresh' => 'Освежи',
+
+	'ltr' => 'ltr', // text direction - 'ltr' or 'rtl'
+
+	'Privileges' => 'Дозволе',
+	'Create user' => 'Направи корисника',
+	'User has been dropped.' => 'Корисник је избрисан.',
+	'User has been altered.' => 'Корисник је измењен.',
+	'User has been created.' => 'корисник је креиран.',
+	'Hashed' => 'Хеширано',
+	'Column' => 'Колона',
+	'Routine' => 'Рутина',
+	'Grant' => 'Дозволи',
+	'Revoke' => 'Опозови',
+
+	'Process list' => 'Списак процеса',
+	'%d process(es) have been killed.' => array('%d процес је убијен.', '%d процеса су убијена.', '%d процеса је убијено.'),
+	'Kill' => 'Убиј',
+
+	'Variables' => 'Променљиве',
+	'Status' => 'Статус',
+
+	'SQL command' => 'SQL команда',
+	'%d query(ies) executed OK.' => array('%d упит је успешно извршен.', '%d упита су успешно извршена.', '%d упита је успешно извршено.'),
+	'Query executed OK, %d row(s) affected.' => array('Упит је успешно извршен, %d ред је погођен.', 'Упит је успешно извршен, %d реда су погођена.', 'Упит је успешно извршен, %d редова је погођено.'),
+	'No commands to execute.' => 'Без команди за извршавање.',
+	'Error in query' => 'Грешка у упиту',
+	'Execute' => 'Изврши',
+	'Stop on error' => 'Заустави приликом грешке',
+	'Show only errors' => 'Приказуј само грешке',
+	'%.3f s' => '%.3f s', // sprintf() format for time of the command
+	'History' => 'Историјат',
+	'Clear' => 'Очисти',
+	'Edit all' => 'Измени све',
+
+	'File upload' => 'Слање датотека',
+	'From server' => 'Са сервера',
+	'Webserver file %s' => 'Датотека %s са веб сервера',
+	'Run file' => 'Покрени датотеку',
+	'File does not exist.' => 'Датотека не постоји.',
+	'File uploads are disabled.' => 'Онемогућено је слање датотека.',
+	'Unable to upload a file.' => 'Слање датотеке није успело.',
+	'Maximum allowed file size is %sB.' => 'Највећа дозвољена величина датотеке је %sB.',
+	'The POST data is too large. Reduce the data or increase the %s configuration directive.' => 'Превелики POST податак. Морате да смањите податак или повећајте вредност конфигурационе директиве %s.',
+
+	'Export' => 'Извоз',
+	'Output' => 'Испис',
+	'open' => 'отвори',
+	'save' => 'сачувај',
+	'Format' => 'Формат',
+	'Data' => 'Податци',
+
+	'Database' => 'База података',
+	'Use' => 'Користи',
+	'Select database' => 'Изаберите базу',
+	'Invalid database.' => 'Неисправна база података.',
+	'Database has been dropped.' => 'База података је избрисана.',
+	'Databases have been dropped.' => 'Базњ података су избрисане.',
+	'Database has been created.' => 'База података је креирана.',
+	'Database has been renamed.' => 'База података је преименована.',
+	'Database has been altered.' => 'База података је измењена.',
+	'Alter database' => 'Уреди базу података',
+	'Create database' => 'Формирај базу података',
+	'Database schema' => 'Шема базе података',
+
+	'Permanent link' => 'Трајна веза', // link to current database schema layout
+
+	',' => ',', // thousands separator - must contain single byte
+	'0123456789' => '0123456789',
+	'Engine' => 'Механизам',
+	'Collation' => 'Сравњивање',
+	'Data Length' => 'Дужина података',
+	'Index Length' => 'Дужина индекса',
+	'Data Free' => 'Слободно података',
+	'Rows' => 'Редова',
+	'%d in total' => 'укупно %d',
+	'Analyze' => 'Анализирај',
+	'Optimize' => 'Оптимизуј',
+	'Check' => 'Провери',
+	'Repair' => 'Поправи',
+	'Truncate' => 'Испразни',
+	'Tables have been truncated.' => 'Табеле су испражњене.',
+	'Move to another database' => 'Премести у другу базу података',
+	'Move' => 'Премести',
+	'Tables have been moved.' => 'Табеле су премешћене.',
+	'Copy' => 'Умножи',
+	'Tables have been copied.' => 'Табеле су умножене.',
+
+	'Routines' => 'Рутине',
+	'Routine has been called, %d row(s) affected.' => array('Позвана је рутина, %d ред је погођен.', 'Позвана је рутина, %d реда су погођена.', 'Позвана је рутина, %d редова је погођено.'),
+	'Call' => 'Позови',
+	'Parameter name' => 'Назив параметра',
+	'Create procedure' => 'Формирај процедуру',
+	'Create function' => 'Формирај функцију',
+	'Routine has been dropped.' => 'Рутина је избрисана.',
+	'Routine has been altered.' => 'Рутина је измењена.',
+	'Routine has been created.' => 'Рутина је креирана.',
+	'Alter function' => 'Уреди функцију',
+	'Alter procedure' => 'Уреди процедуру',
+	'Return type' => 'Повратни тип',
+
+	'Events' => 'Догађаји',
+	'Event has been dropped.' => 'Догађај је избрисан.',
+	'Event has been altered.' => 'Догађај је измењен.',
+	'Event has been created.' => 'Догађај је креиран.',
+	'Alter event' => 'Уреди догађај',
+	'Create event' => 'Направи догађај',
+	'At given time' => 'У задато време',
+	'Every' => 'Сваки',
+	'Schedule' => 'Распоред',
+	'Start' => 'Почетак',
+	'End' => 'Крај',
+	'On completion preserve' => 'Задржи по завршетку',
+
+	'Tables' => 'Табеле',
+	'Tables and views' => 'Табеле и погледи',
+	'Table' => 'Табела',
+	'No tables.' => 'Без табела.',
+	'Alter table' => 'Уреди табелу',
+	'Create table' => 'Направи табелу',
+	'Table has been dropped.' => 'Табела је избрисана.',
+	'Tables have been dropped.' => 'Табеле су избрисане.',
+	'Tables have been optimized.' => 'Табеле су оптимизоване.',
+	'Table has been altered.' => 'Табела је измењена.',
+	'Table has been created.' => 'Табела је креирана.',
+	'Table name' => 'Назив табеле',
+	'Show structure' => 'Прикажи структуру',
+	'engine' => 'механизам',
+	'collation' => 'Сравњивање',
+	'Column name' => 'Назив колоне',
+	'Type' => 'Тип',
+	'Length' => 'Дужина',
+	'Auto Increment' => 'Ауто-прираштај',
+	'Options' => 'Опције',
+	'Comment' => 'Коментар',
+	'Default values' => 'Подразумеване вредности',
+	'Drop' => 'Избриши',
+	'Are you sure?' => 'Да ли сте сигурни?',
+	'Remove' => 'Уклони',
+	'Maximum number of allowed fields exceeded. Please increase %s.' => 'Премашен је максимални број дозвољених поља. Молим увећајте %s.',
+
+	'Partition by' => 'Подели по',
+	'Partitions' => 'Поделе',
+	'Partition name' => 'Име поделе',
+	'Values' => 'Вредности',
+
+	'View' => 'Поглед',
+	'View has been dropped.' => 'Поглед је избрисан.',
+	'View has been altered.' => 'Поглед је измењен.',
+	'View has been created.' => 'Поглед је креиран.',
+	'Alter view' => 'Уреди поглед',
+	'Create view' => 'Направи поглед',
+
+	'Indexes' => 'Индекси',
+	'Indexes have been altered.' => 'Индекси су измењени.',
+	'Alter indexes' => 'Уреди индексе',
+	'Add next' => 'Додај следећи',
+	'Index Type' => 'Тип индекса',
+	'length' => 'дужина',
+	'operator class' => 'класа оператора', // Claude Fable 5
+
+	'Foreign keys' => 'Страни кључеви',
+	'Foreign key has been dropped.' => 'Страни кључ је избрисан.',
+	'Foreign key has been altered.' => 'Страни кључ је измењен.',
+	'Foreign key has been created.' => 'Страни кључ је креиран.',
+	'Target table' => 'Циљна табела',
+	'Change' => 'Измени',
+	'Source' => 'Извор',
+	'Target' => 'Циљ',
+	'Add column' => 'Додај колону',
+	'Alter' => 'Уреди',
+	'Alter foreign key' => 'Уреди страни кључ', // Claude Opus 5
+	'Create foreign key' => 'Направи страни кључ', // Claude Opus 5
+	'ON DELETE' => 'ON DELETE (приликом брисања)',
+	'ON UPDATE' => 'ON UPDATE (приликом освежавања)',
+	'Source and target columns must have the same data type, there must be an index on the target columns and the referenced data must exist.' => 'Изворне и циљне колоне морају бити истог типа, циљна колона мора бити индексирана и изворна табела мора садржати податке из циљне.',
+
+	'Triggers' => 'Окидачи',
+	'Trigger has been dropped.' => 'Окидач је избрисан.',
+	'Trigger has been altered.' => 'Окидач је измењен.',
+	'Trigger has been created.' => 'Окидач је креиран.',
+	'Alter trigger' => 'Уреди окидач',
+	'Create trigger' => 'Формирај окидач',
+	'Time' => 'Време',
+	'Event' => 'Догађај',
+	'Name' => 'Име',
+
+	'select' => 'изабери',
+	'Select' => 'Изабери',
+	'Select data' => 'Изабери податке',
+	'Functions' => 'Функције',
+	'Aggregation' => 'Сакупљање',
+	'Search' => 'Претрага',
+	'anywhere' => 'било где',
+	'Search data in tables' => 'Претражи податке у табелама',
+	'Sort' => 'Поређај',
+	'descending' => 'опадајуће',
+	'Limit' => 'Граница',
+	'Text length' => 'Дужина текста',
+	'Action' => 'Акција',
+	'Full table scan' => 'Скренирање комплетне табеле',
+	'Unable to select the table' => 'Не могу да изаберем табелу',
+	'No rows.' => 'Без редова.',
+	'%d row(s)' => array('%d ред', '%d реда', '%d редова'),
+	'Page' => 'Страна',
+	'last' => 'последња',
+	'Loading…' => 'Учитавам…',
+	'Load more data' => 'Учитавам још података',
+	'Whole result' => 'Цео резултат',
+	'%d byte(s)' => array('%d бајт', '%d бајта', '%d бајтова'),
+
+	'Import' => 'Увоз',
+	'%d row(s) have been imported.' => array('%d ред је увежен.', '%d реда су увежена.', '%d редова је увежено.'),
+
+	'Ctrl+click on a value to modify it.' => 'Ctrl+клик на вредност за измену.', // in-place editing in select
+	'Use the edit link to modify this value.' => 'Користи везу за измену ове вредности.',
+
+	'Item%s has been inserted.' => 'Ставка%s је додата.', // %s can contain auto-increment value
+	'Item has been deleted.' => 'Ставка је избрисана.',
+	'Item has been updated.' => 'Ставка је измењена.',
+	'%d item(s) have been affected.' => array('%d ставка је погођена.', '%d ставке су погођене.', '%d ставки је погођено.'),
+	'New item' => 'Нова ставка',
+	'original' => 'оригинал',
+	'empty' => 'празно', // label for value '' in enum data type
+	'edit' => 'измени',
+	'Edit' => 'Измени',
+	'Insert' => 'Уметни',
+	'Save' => 'Сачувај',
+	'Save and continue editing' => 'Сачувај и настави уређење',
+	'Save and insert next' => 'Сачувај и уметни следеће',
+	'Clone' => 'Дуплирај',
+	'Delete' => 'Избриши',
+
+	// data type descriptions
+	'Numbers' => 'Број',
+	'Date and time' => 'Датум и време',
+	'Strings' => 'Текст',
+	'Binary' => 'Бинарно',
+	'Lists' => 'Листе',
+	'Network' => 'Мрежа',
+	'Geometry' => 'Геометрија',
+	'Ranges' => 'Опсези', // Claude Opus 5
+	'Relations' => 'Односи',
+
+	'Editor' => 'Уређивач',
+	'$1-$3-$5' => '$5.$3.$1.', // date format in Editor: $1 yyyy, $2 yy, $3 mm, $4 m, $5 dd, $6 d
+	'[yyyy]-mm-dd' => 'dd.mm.[yyyy].', // hint for date format - use language equivalents for day, month and year shortcuts
+	'HH:MM:SS' => 'HH:MM:SS', // hint for time format - use language equivalents for hour, minute and second shortcuts
+	'now' => 'сад',
+	'yes' => 'да',
+	'no' => 'не',
+
+	'File exists.' => 'Датотека већ постоји.', // general SQLite error in create, drop or rename database
+	'Please use one of these file extensions: %s.' => 'Молим користите један од наставака %s.',
+
+	// PostgreSQL and MS SQL schema support
+	'Alter schema' => 'Уреди шему',
+	'Create schema' => 'Формирај шему',
+	'Schema has been dropped.' => 'Шема је избрисана.',
+	'Schema has been created.' => 'Шема је креирана.',
+	'Schema has been altered.' => 'Шема је измењена.',
+	'Schema' => 'Шема',
+	'Invalid schema.' => 'Шема није исправна.',
+
+	// PostgreSQL sequences support
+	'Sequences' => 'Низови',
+	'Create sequence' => 'Направи низ',
+	'Sequence has been dropped.' => 'Низ је избрисан.',
+	'Sequence has been created.' => 'Низ је формиран.',
+	'Sequence has been altered.' => 'Низ је измењен.',
+	'Alter sequence' => 'Уреди низ',
+
+	// PostgreSQL user-defined types support
+	'User types' => 'Кориснички типови',
+	'Create type' => 'Дефиниши тип',
+	'Type has been dropped.' => 'Тип је избрисан.',
+	'Type has been created.' => 'тип је креиран.',
+	'Type has been altered.' => 'Тип је измењен.', // Claude Opus 5
+	'Alter type' => 'Уреди тип',
+	'Check has been dropped.' => 'Провера је избрисана.', // Claude Fable 5
+	'Check has been altered.' => 'Провера је измењена.', // Claude Fable 5
+	'Check has been created.' => 'Провера је креирана.', // Claude Fable 5
+	'Alter check' => 'Уреди проверу', // Claude Fable 5
+	'Create check' => 'Направи проверу', // Claude Fable 5
+	'Drop %s?' => 'Избрисати %s?', // Claude Fable 5
+	'Vacuum' => 'Очисти', // Claude Fable 5
+	'Selected' => 'Изабрано', // Claude Fable 5
+	'overwrite' => 'препиши', // Claude Fable 5
+	'DB' => 'DB', // Claude Fable 5
+	'Algorithm' => 'Алгоритам', // Claude Fable 5
+	'Columns' => 'Колоне', // Claude Fable 5
+	'Condition' => 'Услов', // Claude Fable 5
+	'File must be in UTF-8 encoding.' => 'Датотека мора бити у UTF-8 кодирању.', // Claude Fable 5
+	'Modify' => 'Измени', // Claude Fable 5
+	'%s queries are not supported.' => '%s упити нису подржани.', // Claude Fable 5
+	'Warnings' => 'Упозорења', // Claude Fable 5
+	'%d / ' => '%d / ', // Claude Fable 5
+	'Limit rows' => 'Ограничи број редова', // Claude Fable 5
+	'Materialized view' => 'Материјализовани поглед', // Claude Fable 5
+	'Inherits from' => 'Наслеђује од', // Claude Fable 5
+	'Checks' => 'Провере', // Claude Fable 5
+	'Inherited by' => 'Наслеђено од', // Claude Fable 5
+	'hostname[:port] or :socket' => 'hostname[:port] или :socket', // Claude Fable 5
+	'Adminer does not support accessing a database without a password.' => 'Adminer не подржава приступ бази података без лозинке.', // Claude Fable 5
+	'Default value' => 'Подразумевана вредност', // Claude Fable 5
+	'Too many unsuccessful logins, try again in %d minute(s).' => array('Превише неуспешних пријава, покушајте поново за %d минут.', 'Превише неуспешних пријава, покушајте поново за %d минута.', 'Превише неуспешних пријава, покушајте поново за %d минута.'), // Claude Fable 5
+	'Thanks for using Adminer. Consider <a href="https://www.adminer.org/en/donation/">donating</a>.' => 'Хвала што користите Adminer, размислите о <a href="https://www.adminer.org/en/donation/">донацији</a>.', // Claude Fable 5
+	'Master password expired. <a href="https://www.adminer.org/en/extension/"%s>Implement</a> the %s method to make it permanent.' => 'Главна лозинка је истекла. <a href="https://www.adminer.org/en/extension/"%s>Имплементирајте</a> методу %s да бисте је учинили трајном.', // Claude Fable 5
+	'The action will be performed after successful login with the same credentials.' => 'Радња ће бити извршена након успешне пријаве са истим подацима.', // Claude Fable 5
+	'Invalid server.' => 'Неважећи сервер.', // Claude Fable 5
+	'Connecting to privileged ports is not allowed.' => 'Повезивање на привилеговане портове није дозвољено.', // Claude Fable 5
+	'There is a space in the entered password, which might be the cause.' => 'У унетој лозинци постоји размак, што би могао бити узрок.', // Claude Fable 5
+	'If you did not send this request from Adminer, close this page.' => 'Ако нисте послали овај захтев из Adminer-а, затворите ову страницу.', // Claude Fable 5
+	'You can upload a large SQL file via FTP and import it from the server.' => 'Велику SQL датотеку можете послати путем FTP-а и увести је са сервера.', // Claude Fable 5
+	'Size' => 'Величина', // Claude Fable 5
+	'Compute' => 'Израчунај', // Claude Fable 5
+	'Loaded plugins' => 'Учитани додаци', // Claude Fable 5
+	'screenshot' => 'снимак екрана', // Claude Fable 5
+	'You are offline.' => 'Ван мреже сте.', // Claude Fable 5
+	'Increase %s.' => 'Повећајте %s.', // Claude Fable 5
+	'You have no privileges to update this table.' => 'Немате привилегије за ажурирање ове табеле.', // Claude Fable 5
+	'Saving…' => 'Чувам…', // Claude Fable 5
+	'Unknown error.' => 'Непозната грешка.', // Claude Fable 5
+	'%s must <a%s>return an array</a>.' => '%s мора да <a%s>врати низ</a>.', // Claude Fable 5
+	'<a%s>Configure</a> %s in %s.' => '<a%s>Конфигуришите</a> %s у %s.', // Claude Fable 5
+	'Every plugin must <a%s>be an object</a>.' => 'Сваки додатак мора да <a%s>буде објекат</a>.', // Claude Opus 5
+	'Disable %s or enable the %s or %s extension.' => 'Онемогућите екстензију %s или омогућите екстензије %s или %s.', // Claude Fable 5
+	'The database does not support passwords.' => 'База података не подржава лозинку.', // Claude Fable 5
+	'The server accepts any password, so filling it in protects nothing.' => 'Сервер прихвата било коју лозинку, па њено уношење ништа не штити.', // Claude Opus 5
+	'Require a password.' => 'Захтевај лозинку.', // Claude Opus 5
+	'Save %s next to Adminer to require the entered password:' => 'Сачувајте %s поред Adminer-а да би се захтевала унета лозинка:', // Claude Opus 5
+	'Save %s next to Adminer to require the password %s:' => 'Сачувајте %s поред Adminer-а да би се захтевала лозинка %s:', // Claude Opus 5
+	'Add this line to %s to require the entered password:' => 'Додајте овај ред у %s да би се захтевала унета лозинка:', // Claude Opus 5
+	'Add this line to %s to require the password %s:' => 'Додајте овај ред у %s да би се захтевала лозинка %s:', // Claude Opus 5
+	'More options' => 'Више опција', // Claude Opus 5
+	'Require a password verified by Adminer' => 'Захтева лозинку коју проверава Adminer', // Claude Opus 5
+);
+
+// run `php ../../lang.php sr` to update this file
