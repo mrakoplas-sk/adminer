@@ -8,7 +8,7 @@ $fields = fields($TABLE);
 $foreign_keys = column_foreign_keys($TABLE);
 $oid = $table_status["Oid"];
 $adminer_import = get_settings("adminer_import");
-
+	
 $rights = array(); // privilege => 0
 $columns = array(); // selectable columns
 $search_columns = array(); // searchable columns
@@ -637,7 +637,7 @@ if (!$columns && support("table")) {
 					}
 				}
 				if ($format) {
-					print_fieldset("export", lang('Export') . " <span id='selected2'></span>");
+					echo "<fieldset><legend><a href='#fieldset-export' class='toggle'>" . lang('Export') . " <span id='selected2'></span></a></legend><div id='fieldset-export'>";
 					$output = adminer()->dumpOutput();
 					echo ($output ? html_select("output", $output, $adminer_import["output"]) . " " : "");
 					echo html_select("format", $format, $adminer_import["format"]);
@@ -652,7 +652,7 @@ if (!$columns && support("table")) {
 			if (adminer()->selectImportPrint()) {
 				echo "<p>";
 				echo "<a href='#import' class='toggle'>" . lang('Import') . "</a>";
-				echo "<span id='import'" . ($_POST["import"] ? "" : " class='hidden'") . ">: ";
+				echo "<span id='import'" . ($_POST["import"] ? "" : " class=''") . ">: ";
 				echo ($upload_progress ? input_hidden(ini_get("session.upload_progress.name"), $upload_progress) : "");
 				echo file_input(" name='csv_file'", " "
 					. html_select("separator", array("csv" => "CSV,", "csv;" => "CSV;", "tsv" => "TSV"), $adminer_import["format"])
